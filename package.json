@@ -6,7 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "deploy": "ng build --prod --base-href=https://IbrahimSaliba.github.io/geenral_ui/ && gh-pages -d www",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
