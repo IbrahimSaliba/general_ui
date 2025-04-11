@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input [(ngModel)]="event.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea [(ngModel)]="event.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Photo URL</ion-label>
+    <ion-input [(ngModel)]="event.photo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Date</ion-label>
+    <ion-datetime [(ngModel)]="event.date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Status</ion-label>
+    <ion-select [(ngModel)]="event.status">
+      <ion-select-option value="Upcoming">Upcoming</ion-select-option>
+      <ion-select-option value="Completed">Completed</ion-select-option>
+      <ion-select-option value="Cancelled">Cancelled</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+    <ion-button expand="full" (click)="saveEvent()">Save</ion-button>
+    <ion-button expand="full" color="danger" (click)="purgeEvent()">Delete</ion-button>
+  </div>
+</ion-content>

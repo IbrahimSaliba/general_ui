@@ -1,0 +1,91 @@
+.task-manager {
+    display: flex;
+    // justify-content: space-between;
+    width: 100%;
+    height: 100%;
+   // max-width: 1200px;
+    //height: 90vh;
+    //max-height: 900px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow:
+    0 0.3px 2.2px rgba(0, 0, 0, 0.011),
+    0 0.7px 5.3px rgba(0, 0, 0, 0.016),
+    0 1.3px 10px rgba(0, 0, 0, 0.02),
+    0 2.2px 17.9px rgba(0, 0, 0, 0.024),
+    0 4.2px 33.4px rgba(0, 0, 0, 0.029),
+    0 10px 80px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
+
+  .page-content {
+    overflow:auto;
+    padding: 40px 20px 0 20px;
+    
+    // .header { 
+    //   font-size: 26px; 
+    //   color: #353536; 
+    //   margin-top: 30px;
+    // }
+  }
+
+  .app-event-table {
+    flex: 1; /* Allow the table to take available space */
+    overflow: auto; /* Allow scrolling within the table if needed */
+  }
+
+
+
+
+  ion-grid {
+    ion-row {
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .odd-row {
+    background-color: white;
+  }
+  
+  .even-row {
+    background-color: #f5f8ff;
+    /* Light grey */
+  }
+  
+  
+  ion-col {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  ion-col img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  
+  .cancelled-row {
+    background-color: #f8d7da; /* Light red background for cancelled rows */
+    color: #721c24; /* Dark red text for better contrast */
+  }
+  
+  .completed-row {
+    background-color: #d4edda; /* Light green background for completed rows */
+    color: #155724; /* Dark green text for better contrast */
+  }

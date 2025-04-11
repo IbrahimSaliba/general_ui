@@ -1,0 +1,36 @@
+<ion-content>
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterEvents()" placeholder="Search by Title" showCancelButton="focus" animated></ion-searchbar>
+
+    <ion-select [(ngModel)]="selectedStatus" (ionChange)="filterEvents()" placeholder="Filter by Status" style="width: 150px; margin-left: 10px;">
+      <ion-select-option value="">All</ion-select-option>
+      <ion-select-option value="Upcoming">Upcoming</ion-select-option>
+      <ion-select-option value="Completed">Completed</ion-select-option>
+      <ion-select-option value="Cancelled">Cancelled</ion-select-option>
+    </ion-select>
+  </div>
+
+  <ion-grid>
+    <ion-row style="height: 40px; background-color: aliceblue; position: sticky; top: 0; z-index: 1;">
+      <ion-col>Title</ion-col>
+      <ion-col>Description</ion-col>
+      <ion-col>Photo</ion-col>
+      <ion-col>Date</ion-col>
+      <ion-col>Status</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let event of filteredEvents; let i = index" 
+             (click)="editEvent(event)" 
+             [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0, 'cancelled-row': event.status === 'Cancelled', 'completed-row': event.status === 'Completed'}"
+             style="border-bottom: 2px solid; border-color: whitesmoke;">
+      <ion-col>{{ event.title }}</ion-col>
+      <ion-col>{{ event.description }}</ion-col>
+      <ion-col><img [src]="event.photo" alt="{{ event.title }}" /></ion-col>
+      <ion-col>{{ event.date | date }}</ion-col>
+      <ion-col>{{ event.status }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <app-event-modal *ngIf="selectedEvent" [event]="selectedEvent" (save)="updateEvent($event)"></app-event-modal>
+  </ion-modal>
+</ion-content>

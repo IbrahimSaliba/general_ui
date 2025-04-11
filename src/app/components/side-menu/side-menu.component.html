@@ -1,0 +1,88 @@
+<div class="left-bar">
+  <div class="profile-picture-container">
+    <img
+      src="https://images.unsplash.com/photo-1455504490126-80ed4d83b3b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+      alt="Profile Picture" class="profile-picture">
+  </div>
+
+  <div class="nameContainer" *ngIf="user">
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+  </div>
+
+
+
+
+  <div class="left-content">
+    <ul class="action-list">
+      <li class="item">
+        <ion-icon name="logo-web-component" style="margin-right: 8px;"></ion-icon>
+        <span (click)="goToDashboard()">Dashboard</span>
+      </li>
+      <li class="item" *ngIf="user && user.role_id==1">
+        <ion-icon name="person-circle-outline" style="margin-right: 8px;"></ion-icon>
+        <span>Users</span>
+      </li>
+      <li class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-calendar"
+          viewBox="0 0 24 24">
+          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+          <path d="M16 2v4M8 2v4m-5 4h18" />
+        </svg>
+        <span (click)="goToUpcoming()">Upcoming</span>
+      </li>
+      <li class="item">
+        <ion-icon name="settings-outline" style="margin-right: 8px;"></ion-icon>
+        <span>Configurations</span>
+      </li>
+      <li class="item">
+        <ion-icon name="documents-outline" style="margin-right: 8px;"></ion-icon>
+        <span>Reports</span>
+      </li>
+      <li class="item">
+        <ion-icon name="newspaper-outline" style="margin-right: 8px;"></ion-icon>
+        <span>FAQ</span>
+      </li>
+    </ul>
+    <ul class="category-list">
+      <li class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-users">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+        <span>Family</span>
+      </li>
+      <li class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-sun"
+          viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+        <span>Vacation</span>
+      </li>
+      <li class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-trending-up">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+          <polyline points="17 6 23 6 23 12" />
+        </svg>
+        <span>Festival</span>
+      </li>
+      <li class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-zap">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+        <span>Concerts</span>
+      </li>
+    </ul>
+  </div>
+</div>

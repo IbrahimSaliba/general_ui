@@ -1,0 +1,54 @@
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  ion-content {
+    height: 86%;
+  }
+  
+  ion-header {
+    --background: var(--ion-color-primary);
+    color: white;
+  }
+  
+  ion-toolbar {
+    --min-height: 56px;
+    text-align: center;
+  }
+  
+  ion-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  ion-content {
+    padding: 16px;
+  }
+  
+  ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  ion-input,
+  ion-textarea,
+  ion-datetime,
+  ion-select {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --background: var(--ion-color-secondary);
+    color: white;
+  }
+  
